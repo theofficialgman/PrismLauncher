@@ -29,6 +29,11 @@ jobs:
           - os: ubuntu-20.04
             qt_ver: 5
 
+          - os: ubuntu-22.04
+            qt_ver: 5
+            architecture: 'arm64'
+            container: 'arm64v8/ubuntu:bionic'
+
           - os: ubuntu-20.04
             qt_ver: 6
             qt_host: linux
@@ -97,6 +102,8 @@ jobs:
             qt_tools: ''
 
     runs-on: ${{ matrix.os }}
+
+    container: ${{ matrix.container }}
 
     env:
       MACOSX_DEPLOYMENT_TARGET: ${{ matrix.macosx_deployment_target }}
