@@ -118,6 +118,8 @@ jobs:
       ##
       # PREPARE
       ##
+      - name: setup QEMU
+        uses: docker/setup-qemu-action@v2
       - name: Checkout
         uses: actions/checkout@v3
         with:
